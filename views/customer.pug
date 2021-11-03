@@ -2,3 +2,27 @@ extends layout
 
 block content
     h1= title
+    div(class="container-fluid")
+        div(class="row")
+            -
+                let details= [
+                    {
+                        "Customer_name": "Pavan Kumar Atmakuri",
+                        "Customer_Gender":"Male",
+                        "Customer_Age":22
+                    },
+                    {
+                        "Customer_name": "Rohit Ganguru",
+                        "Customer_Gender":"Male",
+                        "Customer_Age":24
+                    },
+                    {
+                        "Customer_name": "Manoj Gorantla",
+                        "Customer_Gender":"Male",
+                        "Customer_Age":26
+                    },
+                ]
+            each cus,index in details
+                div(class="col-sm-2") #{cus.Customer_name}
+                div(class="col-sm-2") #{cus.Customer_Gender}
+                div(class="col-sm-2") #{cus.Customer_Age}
